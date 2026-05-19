@@ -32,6 +32,7 @@ videoTranslator/
 ├── requirements-rvc.txt
 ├── .env.example
 ├── CHANGELOG.md
+├── COMMITS.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
@@ -128,6 +129,8 @@ The source code is organized as a small Python package under `video_translator/`
 - `utils.py`: shared FFmpeg and filesystem utilities
 
 The shell interface lives in `translate.sh`. It handles guided setup, `.env` loading, video discovery, provider validation, Demucs setup checks, and VTT embedding.
+
+For traceability, `COMMITS.md` maps public commit hashes to short hash tags and descriptions.
 
 ## Environment Variables
 
