@@ -21,14 +21,21 @@ Video Translator is an AI video translation and dubbing toolkit for creators, ed
 
 ```text
 videoTranslator/
+├── .github/
+│   ├── dependabot.yml
+│   └── workflows/
+│       └── ci.yml
 ├── main.py
 ├── translate.sh
 ├── requirements.txt
 ├── requirements-demucs.txt
 ├── requirements-rvc.txt
 ├── .env.example
+├── CHANGELOG.md
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
+├── SECURITY.md
 ├── video_translator/
 │   ├── cli.py
 │   ├── config.py
@@ -64,6 +71,19 @@ Install Python and FFmpeg:
 brew install python ffmpeg
 ```
 
+If you use MacPorts instead of Homebrew:
+
+```bash
+sudo port selfupdate
+sudo port install python312 ffmpeg
+```
+
+If your shell does not find MacPorts Python automatically, use:
+
+```bash
+/opt/local/bin/python3.12 -m venv .venv
+```
+
 Clone the repository and create a virtual environment from the `videoTranslator` folder:
 
 ```bash
@@ -93,6 +113,21 @@ Verify the setup:
 ./translate.sh --help
 ffmpeg -version
 ```
+
+## Source Code
+
+The source code is organized as a small Python package under `video_translator/`:
+
+- `cli.py`: command-line arguments and execution entry point
+- `pipeline.py`: end-to-end orchestration
+- `transcription.py`: Whisper and VTT transcript handling
+- `translation.py`: local, OpenAI, and Gemini translation providers
+- `tts.py`: Edge, gTTS, OpenAI, ElevenLabs, Gemini, timing, and voice chunking
+- `media.py`: FFmpeg assembly, background preservation, and final audio mix
+- `subtitles.py`: WebVTT parsing helpers
+- `utils.py`: shared FFmpeg and filesystem utilities
+
+The shell interface lives in `translate.sh`. It handles guided setup, `.env` loading, video discovery, provider validation, Demucs setup checks, and VTT embedding.
 
 ## Environment Variables
 
@@ -126,6 +161,14 @@ DUB_AMBIENCE_DECAY=0.045
 The `.env` file is ignored by Git. Keep `.env.example` committed as the safe template.
 
 When you select `--tts-provider openai`, `--tts-provider elevenlabs`, `--tts-provider gemini`, `--translation-provider openai`, or `--translation-provider gemini`, `translate.sh` validates the required environment variables before starting the pipeline. If a key or voice ID is missing, it stops early with a setup message instead of silently falling back to another voice.
+
+## Security
+
+- Never commit `.env`, API keys, source videos, generated outputs, model weights, or private subtitles.
+- Rotate any API key immediately if it is pasted into an issue, commit, chat log, or terminal recording.
+- Review `git status --short --ignored` before publishing. Only source files, docs, requirements, and safe examples should be tracked.
+- The project uses GitHub Actions with read-only repository permissions and Dependabot updates for GitHub Actions and Python dependencies.
+- See `SECURITY.md` for vulnerability reporting and secret-handling guidance.
 
 ## Usage
 

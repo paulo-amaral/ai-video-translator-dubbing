@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate source
+    runs-on: macos-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate shell syntax
+        run: bash -n translate.sh
+
+      - name: Compile Python files
+        run: python -m py_compile main.py video_translator/*.py
+
+      - name: Check for committed secrets and generated artifacts
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^\.env$|^output/|^models/|\.(mp4|m4v|mov|webm|mkv|mp3|wav|srt|vtt)$)'; then
+            echo "Generated media, models, subtitles, or .env files must not be committed."
+            exit 1
+          fi
+          if git grep -nE '(AIza[0-9A-Za-z_-]{20,}|sk-[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z_]{20,}|github_pat_[0-9A-Za-z_]{20,})'; then
+            echo "Potential secret found in tracked files."
+            exit 1
+          fi

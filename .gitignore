@@ -18,6 +18,17 @@ ENV/
 .env
 .env.*
 !.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.asc
+*.kdbx
+id_rsa*
+id_ed25519*
+secrets/
 
 # Generated media and model artifacts
 output/
@@ -38,7 +49,12 @@ temp/
 # Keep source code and documentation trackable
 !README.md
 !LICENSE
+!CHANGELOG.md
+!CONTRIBUTING.md
+!SECURITY.md
 !.gitattributes
+!.github/
+!.github/**
 !requirements.txt
 !requirements-demucs.txt
 !requirements-rvc.txt
