@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sensitive security report
+    url: mailto:paulo.security@gmail.com
+    about: Please report vulnerabilities or exposed secrets privately by email.
+  - name: Documentation
+    url: https://github.com/paulo-amaral/ai-video-translator-dubbing#readme
+    about: Read setup, usage, security, and troubleshooting guidance.

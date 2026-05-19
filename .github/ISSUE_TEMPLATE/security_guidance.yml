@@ -1,0 +1,27 @@
+name: Security Guidance
+description: Ask a non-sensitive security question. Do not report vulnerabilities here.
+title: "[Security]: "
+labels:
+  - security
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not use this issue template to disclose vulnerabilities or secrets.
+
+        For sensitive reports, email the maintainer as described in `SECURITY.md`.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What security guidance do you need?
+      placeholder: How should I store Gemini/OpenAI/ElevenLabs keys locally?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Share non-sensitive context only.
+    validations:
+      required: false

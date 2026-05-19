@@ -1,0 +1,58 @@
+name: Feature Request
+description: Suggest an improvement or new capability.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Please avoid sharing private media, API keys, or confidential transcripts.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow problem would this solve?
+      placeholder: I want smoother voice transitions when using VTT timing...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the behavior you would like.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Transcription
+        - Translation
+        - TTS
+        - Audio mixing
+        - FFmpeg video assembly
+        - WebVTT/subtitles
+        - Demucs
+        - RVC
+        - Setup/install
+        - Documentation
+        - Security
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any workarounds or other tools you tried?
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Context
+      description: Add examples, links, or constraints. Do not include secrets.
+    validations:
+      required: false

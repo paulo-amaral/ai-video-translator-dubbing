@@ -1,0 +1,77 @@
+name: Bug Report
+description: Report a reproducible problem with transcription, translation, dubbing, subtitles, or video assembly.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Do not paste API keys, private video content, full `.env` files, or confidential subtitles.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+      placeholder: The translated video fails during Gemini TTS...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Include the command you ran, with secrets removed.
+      placeholder: |
+        1. Run `./translate.sh ...`
+        2. Choose provider `gemini`
+        3. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: Include relevant logs, with private paths, media names, and tokens removed.
+      render: text
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Transcription
+        - Translation
+        - TTS
+        - Audio mixing
+        - FFmpeg video assembly
+        - WebVTT/subtitles
+        - Demucs
+        - RVC
+        - Setup/install
+        - Security
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and Python Version
+      placeholder: macOS 15, Python 3.12
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Privacy Check
+      description: Confirm that no secrets or private media content are included.
+      placeholder: I removed API keys, private paths, and confidential content.
+    validations:
+      required: true
