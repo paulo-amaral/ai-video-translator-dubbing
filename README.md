@@ -1,6 +1,5 @@
 # Video Translator
 
-Owner: Paulo Amaral
 
 Video Translator is an AI video translation and dubbing toolkit for creators, educators, and teams that need multilingual video workflows on macOS. It transcribes speech with Whisper, translates subtitles and transcripts with local models or API providers, generates natural dubbed speech with local/free and cloud TTS providers, preserves background audio, and assembles final MP4 videos with FFmpeg.
 
