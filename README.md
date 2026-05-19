@@ -87,8 +87,8 @@ If your shell does not find MacPorts Python automatically, use:
 Clone the repository and create a virtual environment from the `videoTranslator` folder:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USER/video-translator.git
-cd video-translator
+git clone https://github.com/paulo-amaral/ai-video-translator-dubbing.git
+cd ai-video-translator-dubbing
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip setuptools wheel
