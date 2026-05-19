@@ -11,7 +11,7 @@ Please do not open a public issue for sensitive security reports.
 Report vulnerabilities privately to Paulo Amaral by email:
 
 ```text
-paulo.security@gmail.com
+paulo dot security at gmail.com
 ```
 
 Include:
