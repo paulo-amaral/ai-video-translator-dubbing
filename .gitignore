@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Generated media and model artifacts
+output/
+models/
+downloads/
+tmp/
+temp/
+*.mp4
+*.m4v
+*.mov
+*.webm
+*.mkv
+*.mp3
+*.wav
+*.srt
+*.vtt
+
+# Keep source code and documentation trackable
+!README.md
+!LICENSE
+!.gitattributes
+!requirements.txt
+!requirements-demucs.txt
+!requirements-rvc.txt
+!main.py
+!translate.sh
+!video_translator/
+!video_translator/*.py
+
+# Re-ignore generated Python files after the source-code exceptions above
+__pycache__/
+*.py[cod]
+
+# macOS and editor files
+.DS_Store
+.AppleDouble
+.LSOverride
+.idea/
+.vscode/
+*.swp
+*.swo

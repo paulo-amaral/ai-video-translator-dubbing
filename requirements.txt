@@ -1,0 +1,11 @@
+openai-whisper>=20250625
+moviepy>=1.0.3
+gTTS>=2.3.2
+edge-tts>=6.1.9
+requests>=2.31.0
+transformers>=4.36.0
+torch>=2.1.0
+mutagen>=1.47.0
+sentencepiece>=0.1.99
+numpy>=1.24.0
+tqdm>=4.66.0
