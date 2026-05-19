@@ -1,5 +1,5 @@
 openai-whisper>=20250625
-moviepy>=1.0.3
+moviepy>=2.2.1
 gTTS>=2.3.2
 edge-tts>=6.1.9
 requests>=2.31.0
